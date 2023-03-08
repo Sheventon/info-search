@@ -2,11 +2,8 @@ import re
 import uuid
 from urllib.parse import urlparse
 
-import nltk
 import requests
 from bs4 import BeautifulSoup as bs
-
-nltk.download('punkt')
 
 
 def parse(url):
