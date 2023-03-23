@@ -17,7 +17,7 @@ en_stopwords = stopwords.words('english')
 
 
 def dir_reader(directory):
-    files = natsorted([file for file in listdir(directory) if file.endswith('html')])
+    files = natsorted([file for file in listdir(directory) if file.endswith('txt')])
     files_content = []
     for file in files:
         files_content.append(file_reader(f'{directory}/{file}'))
@@ -55,7 +55,7 @@ def tokenize(text):
     t = re.sub(r'[^A-Za-z-]', ' ', text)
     t = re.sub(r'\d', '', t)
     t = t.split(' ')
-    t = filter(lambda chunk: chunk in words, t)
+    t = filter(lambda chunk: chunk in words and len(chunk) > 1, t)
     return set(t)
 
 

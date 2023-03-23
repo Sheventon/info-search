@@ -20,7 +20,7 @@ for i, url in enumerate(urls):
     except Exception as e:
         print(f'Failed to download {url}: {e.args[0]}')
     else:
-        with open(f'{downloads_dir}/{i + 1}.html', 'w') as html_file:
+        with open(f'{downloads_dir}/{i + 1}.txt', 'w') as html_file:
             html_file.write(html_page)
         with open(f'{downloads_dir}/index.txt', 'a') as index_file:
             index_file.write(f'{i + 1}. {url}\n')
